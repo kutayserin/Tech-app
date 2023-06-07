@@ -42,7 +42,7 @@ export const AddNewProduct = () => {
     }
 
     async function submitNewProduct() {
-        const url = `http://localhost:8443/api/admin/secure/add/product`;
+        const url = `https://localhost:8443/api/admin/secure/add/product`;
         if (authState?.isAuthenticated && title !== '' && brand !== '' && category !== 'Category' && description !== '' && stock >= 0){
             const product: AddProductRequest = new AddProductRequest(title, brand,price,description,stock,category);
             product.img = selectedImage;

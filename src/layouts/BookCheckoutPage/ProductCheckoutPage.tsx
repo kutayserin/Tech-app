@@ -45,7 +45,7 @@ export const ProductCheckoutPage = () => {
 
     useEffect(() => {
         const fetchProduct = async () => {
-            const baseUrl: string = `http://localhost:8443/api/products/${productId}`;
+            const baseUrl: string = `https://localhost:8443/api/products/${productId}`;
 
             const response = await fetch(baseUrl);
 
@@ -80,7 +80,7 @@ export const ProductCheckoutPage = () => {
 
     useEffect(() => {
         const fetchProductReviews = async () => {
-            const reviewUrl: string = `http://localhost:8443/api/reviews/search/findByProductId?productId=${productId}`;
+            const reviewUrl: string = `https://localhost:8443/api/reviews/search/findByProductId?productId=${productId}`;
 
             const responseReviews = await fetch(reviewUrl);
 
@@ -134,7 +134,7 @@ export const ProductCheckoutPage = () => {
 
         const fetchUserReviewProduct = async () => {
             if(authState && authState.isAuthenticated){
-                const url = `http://localhost:8443/api/reviews/secure/user/product/?productId=${productId}`;
+                const url = `https://localhost:8443/api/reviews/secure/user/product/?productId=${productId}`;
 
                 const requestOptions = {
                     method: 'GET',
@@ -168,7 +168,7 @@ export const ProductCheckoutPage = () => {
 
             if(authState && authState.isAuthenticated){
                
-                const url = `http://localhost:8443/api/products/secure/currentloans/count`;
+                const url = `https://localhost:8443/api/products/secure/currentloans/count`;
                 const requestOptions = {
                     method: 'GET',
                     headers: {
@@ -203,7 +203,7 @@ export const ProductCheckoutPage = () => {
     useEffect(()=> {
         const fetchUserCheckedoutProduct = async () => {
             if(authState && authState.isAuthenticated){
-                const url = `http://localhost:8443/api/products/secure/ischeckedout/byuser/?productId=${productId}`;
+                const url = `https://localhost:8443/api/products/secure/ischeckedout/byuser/?productId=${productId}`;
                 const requestOptions = {
                     method: 'GET',
                     headers: {
@@ -251,7 +251,7 @@ export const ProductCheckoutPage = () => {
     }
 
     async function checkoutProduct(){
-        const url = `http://localhost:8443/api/products/secure/checkout/?productId=${productId}`;
+        const url = `https://localhost:8443/api/products/secure/checkout/?productId=${productId}`;
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -279,7 +279,7 @@ export const ProductCheckoutPage = () => {
         }
 
         const reviewRequestModel = new ReviewRequestModel(starInput, productId, reviewDescription);
-        const url = `http://localhost:8443/api/reviews/secure`;
+        const url = `https://localhost:8443/api/reviews/secure`;
 
         const requestOptions = {
             method: 'POST',

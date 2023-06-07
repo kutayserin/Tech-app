@@ -33,7 +33,7 @@ export const ManageServicePage = () => {
     return (
         <div className="container">
             <div className="mt-5">
-                <h3>Manage Library</h3>
+                <h3>Manage Products</h3>
             </div>
             <nav>
                 <div className="nav nav-tabs" id="nav-tab" role="tablist">

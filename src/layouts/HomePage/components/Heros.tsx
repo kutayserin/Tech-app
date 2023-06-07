@@ -65,7 +65,7 @@ export const Heros = () => {
             <div className="d-lg-none">
                 <div className="container">
                     <div className="m-2">
-                        <div className="col-image-left"></div>
+                        <div className="col-image-left-mobile"></div>
                         <div className="mt-2">
 
                             <h1>What are you looking for?</h1>
@@ -85,7 +85,7 @@ export const Heros = () => {
                     </div>
 
                     <div className="m-2">
-                        <div className="col-image-right"></div>
+                        <div className="col-image-right-mobile"></div>
                         <div className="mt-2">
 
                             <h1>Our collection is always changing.</h1>

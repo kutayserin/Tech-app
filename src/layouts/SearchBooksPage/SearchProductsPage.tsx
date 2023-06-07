@@ -25,7 +25,7 @@ export const SearchProductsPage = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const baseUrl: string = "http://localhost:8443/api/products";
+            const baseUrl: string = "https://localhost:8443/api/products";
 
             let url: string = ``;
 

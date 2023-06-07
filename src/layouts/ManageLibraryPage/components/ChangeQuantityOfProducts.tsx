@@ -18,7 +18,7 @@ export const ChangeQuantityOfProducts = () => {
     
     useEffect(() => {
         const fetchProducts = async () => {
-            const baseUrl: string = `http://localhost:8443/api/products?page=${currentPage-1}&size=${productsPerPage}`;
+            const baseUrl: string = `https://localhost:8443/api/products?page=${currentPage-1}&size=${productsPerPage}`;
 
             const response = await fetch(baseUrl);
 

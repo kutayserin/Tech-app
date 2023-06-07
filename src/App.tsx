@@ -14,7 +14,7 @@ import { PaymentPage } from './layouts/PaymentPage/PaymentPage';
 import { SearchProductsPage } from './layouts/SearchBooksPage/SearchProductsPage';
 import { ReviewListPage } from './layouts/BookCheckoutPage/ReviewListPage/ReviewListPage';
 import { ProductCheckoutPage } from './layouts/BookCheckoutPage/ProductCheckoutPage';
-import { CartPage } from './layouts/ShelfPage/CartPage';
+import { CartPage } from './CartPage/CartPage';
 
 const oktaAuth = new OktaAuth(oktaConfig)
 

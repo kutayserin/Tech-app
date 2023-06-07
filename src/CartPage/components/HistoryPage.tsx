@@ -1,11 +1,11 @@
 import { useOktaAuth } from "@okta/okta-react";
 import { useEffect, useState } from "react";
-import HistoryModel from "../../../models/HistoryModel";
+import HistoryModel from "../../models/HistoryModel";
 import { error } from "console";
-import { SpinnerLoading } from "../../Utils/SpinnerLoading";
+import { SpinnerLoading } from "../../layouts/Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
-import { Pagination } from "../../Utils/Pagination";
-import { PaymentPage } from "../../PaymentPage/PaymentPage";
+import { Pagination } from "../../layouts/Utils/Pagination";
+import { PaymentPage } from "../../layouts/PaymentPage/PaymentPage";
 
 export const HistoryPage = () => {
 
@@ -24,7 +24,7 @@ export const HistoryPage = () => {
     useEffect(() => {
         const fetchUserHistory = async () => {
             if (authState && authState.isAuthenticated) {
-                const url = `http://localhost:8443/api/histories/search/findProductsByUserEmail/?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=5`;
+                const url = `https://localhost:8443/api/histories/search/findProductsByUserEmail/?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=5`;
                 const requestOptions = {
                     method: 'GET',
                     headers: {
@@ -89,14 +89,14 @@ export const HistoryPage = () => {
                                             {history.img ?
                                                 <img src={history.img} width={230} height={196} alt='Product' />
                                                 :
-                                                <img src={require('./../../../Images/ProductsImages/default.jpg')} width={123} height={196} alt='Default' />
+                                                <img src={require('./../../Images/ProductsImages/default.jpg')} width={123} height={196} alt='Default' />
                                             }
                                         </div>
                                         <div className="d-lg-none d-flex justify-content-center align-items-center">
                                             {history.img ?
                                                 <img src={history.img} width={230} height={196} alt='Product' />
                                                 :
-                                                <img src={require('./../../../Images/ProductsImages/default.jpg')} width={123} height={196} alt='Default' />
+                                                <img src={require('./../../Images/ProductsImages/default.jpg')} width={123} height={196} alt='Default' />
                                             }
                                         </div>
 

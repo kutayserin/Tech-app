@@ -1,4 +1,4 @@
-import CartCurrentLoans from "../../../models/CartCurrentLoans";
+import CartCurrentLoans from "../../models/CartCurrentLoans";
 
 export const LoansModal: React.FC<{cartCurrentLoan: CartCurrentLoans, mobile: boolean, deleteProduct: any, buyProduct: any}> = (props) => (
     <div className="modal fade" id={props.mobile ? `mobilemodal${props.cartCurrentLoan.product.id}` :
@@ -22,7 +22,7 @@ export const LoansModal: React.FC<{cartCurrentLoan: CartCurrentLoans, mobile: bo
                                         {props.cartCurrentLoan.product?.img ?
                                      <img src={props.cartCurrentLoan.product?.img} width={56} height={87} alt="Product"/>
                                      :
-                                     <img src={require("./../../../Images/ProductsImages/default.jpg")} width={56} height={87} alt="Product"/>    
+                                     <img src={require("./../../Images/ProductsImages/default.jpg")} width={56} height={87} alt="Product"/>    
                                     }
 
                                     </div>

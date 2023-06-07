@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Loans } from "./components/Loans";
 import { HistoryPage } from "./components/HistoryPage";
-import { PaymentPage } from "../PaymentPage/PaymentPage";
 import { useOktaAuth } from "@okta/okta-react";
-import CartCurrentLoans from "../../models/CartCurrentLoans";
 export const CartPage = () => {
 
     const [historyClick, setHistoryClick] = useState(false); // We are using this state because of not be needed to refresh the page.

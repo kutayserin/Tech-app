@@ -19,7 +19,7 @@ export const ChangeQuantityOfProduct: React.FC<{product: ProductModel, deletePro
     },[])
 
     async function increaseQuantity() {
-        const url = `http://localhost:8443/api/admin/secure/increase/product/quantity/?productId=${props.product?.id}`;
+        const url = `https://localhost:8443/api/admin/secure/increase/product/quantity/?productId=${props.product?.id}`;
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -40,7 +40,7 @@ export const ChangeQuantityOfProduct: React.FC<{product: ProductModel, deletePro
     
 
     async function decreaseQuantity() {
-        const url = `http://localhost:8443/api/admin/secure/decrease/product/quantity/?productId=${props.product?.id}`;
+        const url = `https://localhost:8443/api/admin/secure/decrease/product/quantity/?productId=${props.product?.id}`;
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -59,7 +59,7 @@ export const ChangeQuantityOfProduct: React.FC<{product: ProductModel, deletePro
     }
 
     async function deleteProduct(){
-        const url = `http://localhost:8443/api/admin/secure/delete/product/?productId=${props.product?.id}`;
+        const url = `https://localhost:8443/api/admin/secure/delete/product/?productId=${props.product?.id}`;
         const requestOptions = {
             method: 'DELETE',
             headers: {
@@ -85,7 +85,7 @@ export const ChangeQuantityOfProduct: React.FC<{product: ProductModel, deletePro
                 <div className="col-md-2">
                     <div className="d-none d-lg-block m-3">
                         {props.product.img ?
-                        <img src={props.product.img} width={123} height={196} alt="Product"/>
+                        <img src={props.product.img} width={220} height={196} alt="Product"/>
                         :
                         <img src=
                         {require('./../../../Images/ProductsImages/default.jpg')} width={123} height={196} alt="Product"/>
@@ -94,7 +94,7 @@ export const ChangeQuantityOfProduct: React.FC<{product: ProductModel, deletePro
                     </div>
                     <div className="d-lg-none d-lex justify-content-center align-items-center m-3">
                     {props.product.img ?
-                        <img src={props.product.img} width={123} height={196} alt="Product"/>
+                        <img src={props.product.img} width={220} height={196} alt="Product"/>
                         :
                         <img src=
                         {require('./../../../Images/ProductsImages/default.jpg')} width={123} height={196} alt="Product"/>

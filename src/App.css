@@ -32,9 +32,25 @@ background-color: #4a0c91 ;
     background-size: 100%;
 }
 
+.col-image-left-mobile {
+    background-image: url("./Images/PublicImages/tech-products.jpg");
+    height: 20em !important;
+    background-size: 170%;
+    background-position: 30%;
+}
+
+
 .col-image-right {
     background-image: url("./Images/PublicImages/tech-brands.jpg");
-    height: 37em !important;
+    height: 25em !important;
+}
+
+.col-image-right-mobile {
+    background-image: url("./Images/PublicImages/tech-brands.jpg");
+    height: 31em !important;
+    background-size: 168%;
+    background-position-x: 6%;
+
 }
 
 .lost-image {
@@ -45,6 +61,8 @@ background-color: #4a0c91 ;
     width: "720",
    
 }
+
+
 
 .homepage-carousel-title {
     display: flex !important;

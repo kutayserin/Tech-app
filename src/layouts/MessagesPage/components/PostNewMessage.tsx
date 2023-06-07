@@ -12,7 +12,7 @@ export const PostNewMessage = () => {
 
 
     async function submitNewQuestion() {
-        const url = `http://localhost:8443/api/messages/secure/add/message`;
+        const url = `https://localhost:8443/api/messages/secure/add/message`;
         if (authState?.isAuthenticated && title !== '' && question !== '') {
             const messageRequestModel: MessageModel = new MessageModel(title, question);
             const requestOptions = {

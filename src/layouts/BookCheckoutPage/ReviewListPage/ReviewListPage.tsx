@@ -23,7 +23,7 @@ export const ReviewListPage = () => {
 
         useEffect(() => {
             const fetchProductReviews = async () => {
-                const reviewUrl: string = `http://localhost:8443/api/reviews/search/findByProductId?productId=${productId}&page=${currentPage - 1}&size=${reviewsPerPage}`;
+                const reviewUrl: string = `https://localhost:8443/api/reviews/search/findByProductId?productId=${productId}&page=${currentPage - 1}&size=${reviewsPerPage}`;
     
                 const responseReviews = await fetch(reviewUrl);
     

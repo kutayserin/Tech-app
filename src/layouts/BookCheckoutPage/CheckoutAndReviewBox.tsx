@@ -7,7 +7,16 @@ export const CheckoutAndReviewBox: React.FC<{
  product: ProductModel | undefined, mobile: boolean, currentLoansCount: number, isAuthenticated: any, isCheckedOut: boolean, checkoutProduct: any, isReviewLeft: boolean, submitReview: any
 }> = (props) => {
 
+
+    function getCurrentURL () {
+        return window.location.href;
+      }
+      
+      
+    const url = getCurrentURL();
+
     function buttonRender() {
+       // somesharedservıce.redırecturl = getCurrentURL();
         if (props.isAuthenticated) {
             if (!props.isCheckedOut && props.currentLoansCount < 5) {
                 return (
@@ -30,7 +39,12 @@ export const CheckoutAndReviewBox: React.FC<{
                 )
             }
         }
-        return (<Link to={'/login'} className="btn btn-success btn-lg">Sign in</Link>)
+        if(!props.isAuthenticated)
+        {
+            return (<Link to={'/login'} className="btn btn-success btn-lg">Sign in</Link>)
+
+        }
+
 
     }
 

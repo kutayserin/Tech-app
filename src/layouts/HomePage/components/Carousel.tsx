@@ -13,7 +13,7 @@ export const Carousel = () => {
 
     useEffect(() => {
             const fetchProducts = async () => {
-                const baseUrl: string = "http://localhost:8443/api/products";
+                const baseUrl: string = "https://localhost:8443/api/products";
 
                 const url: string = `${baseUrl}?page=0&size=9`;
 
@@ -125,7 +125,7 @@ export const Carousel = () => {
 
             <div className="d-md-none d-xs-block mt-3">
                 <div className="row d-flex justify-content-center align-items-center">
-                    <ReturnProduct product={products[7]} key={products[7].id}/>
+                    <ReturnProduct product={products[3]} key={products[3].id}/>
                 </div>
             </div>
 

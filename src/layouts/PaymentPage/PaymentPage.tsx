@@ -25,7 +25,7 @@ export const PaymentPage = () => {
     useEffect(() => {
         const fetchFees = async () => {
             if (authState && authState.isAuthenticated) {
-                const url = `http://localhost:8443/api/payments/search/findByUserEmail?userEmail=${authState.accessToken?.claims.sub}`;
+                const url = `https://localhost:8443/api/payments/search/findByUserEmail?userEmail=${authState.accessToken?.claims.sub}`;
 
                 const requestOptions = {
                     method: 'GET',
@@ -65,7 +65,7 @@ export const PaymentPage = () => {
             //let lateReturnPaymentInfo = new PaymentInfoRequest(Math.round(fees * 100), 'EURO', authState?.accessToken?.claims.sub);
             let buyProductPaymentInfo = new PaymentInfoRequest(Math.round(fees * 100), 'USD', authState?.accessToken?.claims.sub);
 
-            const url = `http://localhost:8443/api/payment/secure/payment-intent`;
+            const url = `https://localhost:8443/api/payment/secure/payment-intent`;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -98,7 +98,7 @@ export const PaymentPage = () => {
                     alert("There was an error");
                 }
                 else {
-                    const url = `http://localhost:8443/api/payment/secure/payment-complete`;
+                    const url = `https://localhost:8443/api/payment/secure/payment-complete`;
                     const requestOptions = {
                         method: 'PUT',
                         headers: {

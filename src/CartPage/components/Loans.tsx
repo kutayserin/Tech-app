@@ -1,11 +1,11 @@
 import { useOktaAuth } from "@okta/okta-react";
 import { useEffect, useState } from "react";
 import { error } from "console";
-import { SpinnerLoading } from "../../Utils/SpinnerLoading";
+import { SpinnerLoading } from "../../layouts/Utils/SpinnerLoading";
 import { Link } from "react-router-dom";
 import { LoansModal } from "./LoansModal";
-import CartCurrentLoans from "../../../models/CartCurrentLoans";
-import { PaymentPage } from "../../PaymentPage/PaymentPage";
+import CartCurrentLoans from "../../models/CartCurrentLoans";
+import { PaymentPage } from "../../layouts/PaymentPage/PaymentPage";
 
 export const Loans = () => {
 
@@ -20,7 +20,7 @@ export const Loans = () => {
     useEffect(() => {
         const fetchUserCurrentLoans = async () => {
             if (authState && authState.isAuthenticated) {
-                const url = `http://localhost:8443/api/products/secure/currentloans`;
+                const url = `https://localhost:8443/api/products/secure/currentloans`;
                 const requestOptions = {
                     method: 'GET',
                     headers: {
@@ -64,7 +64,7 @@ export const Loans = () => {
     }
 
     async function deleteProduct(productId: number) {
-        const url = `http://localhost:8443/api/products/secure/delete/product/?productId=${productId}`;
+        const url = `https://localhost:8443/api/products/secure/delete/product/?productId=${productId}`;
         const requestOptions = {
             method: 'DELETE',
             headers: {
@@ -83,7 +83,7 @@ export const Loans = () => {
     }
 
     async function buyProduct(productId: number) {
-        const url = `http://localhost:8443/api/products/secure/buy/?productId=${productId}`;
+        const url = `https://localhost:8443/api/products/secure/buy/?productId=${productId}`;
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -101,7 +101,7 @@ export const Loans = () => {
     }
 
     // async function renewLoan(productId: number) {
-    //     const url = `http://localhost:8443/api/products/secure/renew/loan/?productId=${productId}`;
+    //     const url = `https://localhost:8443/api/products/secure/renew/loan/?productId=${productId}`;
     //     const requestOptions = {
     //         method: 'PUT',
     //         headers: {
@@ -135,7 +135,7 @@ export const Loans = () => {
                                         {cartCurrentLoan.product?.img ?
                                             <img src={cartCurrentLoan.product?.img} width={400} height={349} alt="Product" />
                                             :
-                                            <img src={require('./../../../Images/ProductsImages/default.jpg')} width={226} height={349} alt="Product" />
+                                            <img src={require('./../../Images/ProductsImages/default.jpg')} width={226} height={349} alt="Product" />
 
                                         }
 
@@ -156,19 +156,19 @@ export const Loans = () => {
                                         <div className="card-body">
                                             <div className="mt-3">
                                                 <h4>Loan Options</h4>
-                                                {cartCurrentLoan.product.stockAvailable! > 30 &&
+                                                {cartCurrentLoan.productLeft > 30 &&
                                                     <p className="text-secondary">
-                                                         {cartCurrentLoan.product.stockAvailable} product left.
+                                                         {cartCurrentLoan.productLeft} product left.
                                                     </p>
                                                 }
-                                                {cartCurrentLoan.product.stockAvailable === 0 &&
-                                                    <b><p className="text-danger">
-                                                        This is the last product!
-                                                    </p></b>
-                                                }
-                                                {cartCurrentLoan.product.stockAvailable! <= 30 &&
+                                                {cartCurrentLoan.productLeft === 0 &&
                                                     <p className="text-danger">
-                                                        Only {cartCurrentLoan.product.stockAvailable} product left!
+                                                        This is the last product!
+                                                    </p>
+                                                }
+                                                {cartCurrentLoan.productLeft <= 30 &&
+                                                    <p className="text-danger">
+                                                        Only {cartCurrentLoan.productLeft} product left!
                                                     </p>
                                                 }
                                                 <div className="list-group mt-3">
@@ -227,7 +227,7 @@ export const Loans = () => {
                                     {cartCurrentLoan.product?.img ?
                                         <img src={cartCurrentLoan.product?.img} width={390} height={349} alt="Product" />
                                         :
-                                        <img src={require('./../../../Images/ProductsImages/default.jpg')} width={390} height={349} alt="Product" />
+                                        <img src={require('./../../Images/ProductsImages/default.jpg')} width={390} height={349} alt="Product" />
 
                                     }
                                 </div>
